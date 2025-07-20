@@ -1,9 +1,8 @@
-# Askara-AI-
 # Askara AI – Smart Exam Practice Tool
 
 Askara AI is a smart exam prediction system that helps students prepare for exams faster and more effectively.  
 It analyzes patterns from past exam papers and uses AI to generate likely future questions.  
-Students can instantly view answers and ask for clarifications — just like having a personal tutor.
+Students can instantly view answers and ask for clarifications just like having a personal tutor.
 
 ---
 
