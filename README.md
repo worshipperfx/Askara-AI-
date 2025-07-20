@@ -52,18 +52,16 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 
 ## Project Structure
 askara-ai/
-├── backend/ ← FastAPI app
-│ ├── main.py ← Backend routes and GPT logic
+├── backend/ # FastAPI app
+│ ├── main.py # Backend routes and GPT logic
 │ └── ...
-├── frontend/ ← React app
+├── frontend/ # React app
 │ ├── App.jsx
 │ ├── App.css
 │ └── ...
 ├── README.md
 ├── requirements.txt
 └── ...
-
-
 ---
 
 ## How to Run It Locally
