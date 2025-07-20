@@ -51,18 +51,23 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 ---
 
 ## Project Structure
-askara-ai/
-├── backend/ # FastAPI app
-│ ├── main.py # Backend routes and GPT logic
-│ └── ...
-├── frontend/ # React app
-│ ├── App.jsx
-│ ├── App.css
-│ └── ...
-├── README.md
-├── requirements.txt
-└── ...
----
+
+### askara-ai/
+
+#### backend/
+- `main.py` – Backend routes and GPT logic
+- `...` – Other FastAPI files
+
+#### frontend/
+- `App.jsx` – React UI logic
+- `App.css` – Frontend styling
+- `...` – Other React components
+
+#### Root Files
+- `README.md` – Project documentation
+- `requirements.txt` – Python dependencies
+- `...` – Additional config or data files
+
 
 ## How to Run It Locally
 
