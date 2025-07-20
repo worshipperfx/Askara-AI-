@@ -51,7 +51,6 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 ---
 
 ## Project Structure
-
 askara-ai/
 ├── backend/ ← FastAPI app
 │ ├── main.py ← Backend routes and GPT logic
