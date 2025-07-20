@@ -47,7 +47,6 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 
 <img src="screenshots/askara_homepage.png" width="100%" alt="Askara AI Screenshot" />
 
-Update the image path above to match your project folder.
 
 ---
 
