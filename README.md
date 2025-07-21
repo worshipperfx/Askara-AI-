@@ -46,7 +46,7 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 ## 🔍 Preview Screenshots
 
 **1. Homepage – Start screen of Askara AI**  
-<img src="askara_homepage.png" width="100%" alt="Askara AI Homepage" />
+<img src="" width="100%" alt="Askara AI Homepage" />
 
 **2. Question Generated – System displays the predicted exam question**  
 <img src="screenshots/askara_question.png" width="100%" alt="Generated Question" />
