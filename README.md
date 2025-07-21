@@ -54,8 +54,8 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 **3. Answer Displayed – User clicks 'Show Answer' to view the AI's response**  
 <img src="askara_answer.png" width="100%" alt="Generated Answer" />
 
-**4. Clarification – User asks for clarification and gets a follow-up explanation**  
-<img src="screenshots/askara_clarification.png" width="100%" alt="Clarification Response" />
+**4. Clarification – User asks for clarification and gets a follow-up explanation(check the right hand panel😊😊😊)**  
+<img src="askara_clarification.png" width="100%" alt="Clarification Response" />
 
 
 
