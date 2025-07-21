@@ -43,9 +43,20 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 
 ---
 
-## Preview Screenshot
+## 🔍 Preview Screenshots
 
-<img src="screenshots/askara_homepage.png" width="100%" alt="Askara AI Screenshot" />
+**1. Homepage – Start screen of Askara AI**  
+<img src="screenshots/askara_homepage.png" width="100%" alt="Askara AI Homepage" />
+
+**2. Question Generated – System displays the predicted exam question**  
+<img src="screenshots/askara_question.png" width="100%" alt="Generated Question" />
+
+**3. Answer Displayed – User clicks 'Show Answer' to view the AI's response**  
+<img src="screenshots/askara_answer.png" width="100%" alt="Generated Answer" />
+
+**4. Clarification – User asks for clarification and gets a follow-up explanation**  
+<img src="screenshots/askara_clarification.png" width="100%" alt="Clarification Response" />
+
 
 
 ---
