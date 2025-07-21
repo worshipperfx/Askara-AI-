@@ -107,14 +107,6 @@ AI, backend systems, and building real-world tools
 
 ## Live Demo (Coming Soon)
 
-<<<<<<< HEAD
-Hosted version will be added here once deployed on Vercel or GCP Cloud Run.
-
-
-
->>>>>>> 911e51c5d4626d0c6365b9a76dd4a8e2b4c1babe
-=======
-
 Hosted version will be added here once deployed on Vercel or GCP Cloud Run.
 
 
@@ -132,5 +124,3 @@ Currently, two official plugins are available:
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 =======
 
->>>>>>> 
->>>>>>> 7d5a50ad9237a2fdbc3b8774d7d8bfdbe0053bb0
