@@ -49,7 +49,7 @@ Past papers → Topic modeling → Sampling → GPT-4 → Predicted questions
 <img src="askara_homepage.png" width="100%" alt="Askara AI Homepage" />
 
 **2. Question Generated – System displays the predicted exam question**  
-<img src="screenshots/askara_question.png" width="100%" alt="Generated Question" />
+<img src="askara_qn.png" width="100%" alt="Generated Question" />
 
 **3. Answer Displayed – User clicks 'Show Answer' to view the AI's response**  
 <img src="screenshots/askara_answer.png" width="100%" alt="Generated Answer" />
