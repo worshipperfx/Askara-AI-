@@ -2,31 +2,36 @@ import pandas as pd
 import random
 import os
 import time
-from dotenv import load_dotenv
 from openai import OpenAI
-from pathlib import Path
+from dotenv import load_dotenv
 import logging
-
-load_dotenv(dotenv_path="C:/Users/Marvellous/Desktop/Exam Prediction Rephrasing/backend_/python.env")
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 try:
+    # ✅ Load environment variables from .env file
+    load_dotenv()
+    
+    # ✅ Get the key from the loaded environment
     api_key = os.getenv("OPENAI_API_KEY")
+    
     if not api_key:
-        raise ValueError("OPENAI_API_KEY not found in environment variables.")
+        raise ValueError("OPENAI_API_KEY is not found in .env file or environment variables.")
+    
+    # ✅ Initialize OpenAI client
     client = OpenAI(api_key=api_key)
-    logger.info("OpenAI client initialized successfully using environment variable.")
+    logger.info("OpenAI client initialized successfully (from .env file)")
+    
 except Exception as e:
     logger.error(f"Failed to initialize OpenAI client: {e}")
     raise
 
 # Load data with error handling
 try:
-    topics_df = pd.read_csv(r"C:\Users\Marvellous\Desktop\Exam Prediction Rephrasing\topic_only.csv")
-    questions_df = pd.read_csv(r"C:\Users\Marvellous\Desktop\Exam Prediction Rephrasing\merged_with_topics.csv")
+    topics_df = pd.read_csv("topic_only.csv")
+    questions_df = pd.read_csv("merged_with_topics.csv")
     topics_df['Count'] = pd.to_numeric(topics_df['Count'], errors='coerce')
     topics_df['Weight'] = topics_df['Count'] / topics_df['Count'].sum()
     logger.info("Data loaded successfully")

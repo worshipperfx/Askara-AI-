@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
 import logging
-from session import (
+from sessions import (
     generate_question, 
     show_answer, 
     clarify, 
