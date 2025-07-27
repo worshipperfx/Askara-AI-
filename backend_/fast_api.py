@@ -12,7 +12,7 @@ from sessions import (
     state
 )
 
-# Set up logging
+# we set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -22,16 +22,16 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Add CORS middleware for frontend integration
+# CORS middleware for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure this for production
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Pydantic models for request/response validation
+# pydantic models for request/response validation
 class ClarifyRequest(BaseModel):
     follow_up: str
     
@@ -43,7 +43,7 @@ class ClarifyRequest(BaseModel):
         }
 
 class PredictRequest(BaseModel):
-    paper_code: str  # not used now, but reserved for future
+    paper_code: str  
     
     class Config:
         schema_extra = {
@@ -164,7 +164,7 @@ async def clarify_answer(data: ClarifyRequest):
             logger.error(f"Error in clarification: {result['error']}")
             raise HTTPException(status_code=400, detail=result["error"])
         
-        # Handle both clarification and message responses
+        # clarification and message responses
         if "clarification" in result:
             return ClarificationResponse(clarification=result["clarification"])
         elif "message" in result:
@@ -236,7 +236,7 @@ async def health_check():
         "version": "1.0.0"
     }
 
-# Error handlers
+# this part is for error handling
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc):
     """
@@ -260,7 +260,7 @@ async def general_exception_handler(request, exc):
         "status_code": 500
     }
 
-# Startup event
+# startup event
 @app.on_event("startup")
 async def startup_event():
     """
@@ -269,7 +269,7 @@ async def startup_event():
     logger.info("Starting Exam Question Generator API")
     logger.info("API documentation available at /docs")
 
-# Shutdown event
+# shutdown event
 @app.on_event("shutdown")
 async def shutdown_event():
     """

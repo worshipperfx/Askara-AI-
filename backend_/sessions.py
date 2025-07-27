@@ -6,21 +6,21 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import logging
 
-# Set up logging
+# here setting up logging 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 try:
-    # ✅ Load environment variables from .env file
+    # we load env variables from .env file
     load_dotenv()
     
-    # ✅ Get the key from the loaded environment
+    #get our key from the loaded env
     api_key = os.getenv("OPENAI_API_KEY")
     
     if not api_key:
         raise ValueError("OPENAI_API_KEY is not found in .env file or environment variables.")
     
-    # ✅ Initialize OpenAI client
+    #initialize OpenAI client
     client = OpenAI(api_key=api_key)
     logger.info("OpenAI client initialized successfully (from .env file)")
     
@@ -28,7 +28,7 @@ except Exception as e:
     logger.error(f"Failed to initialize OpenAI client: {e}")
     raise
 
-# Load data with error handling
+# we load data with error handling
 try:
     topics_df = pd.read_csv("topic_only.csv")
     questions_df = pd.read_csv("merged_with_topics.csv")
@@ -42,13 +42,13 @@ except Exception as e:
     logger.error(f"Error loading data: {e}")
     raise
 
-# Index questions by topic
+# index questions by topic
 example_questions = {
     row['Topic']: questions_df[questions_df['topic'] == row['Topic']]['text'].tolist()
     for _, row in topics_df.iterrows()
 }
 
-# Global state for now
+# global state 
 state = {
     "current_question": None,
     "current_answer": None,
@@ -84,7 +84,7 @@ def generate_question():
     Generate a new question based on topic weights and examples
     """
     try:
-        # Sample topic based on weights
+        # we sample our topics based on weights
         topic_row = topics_df.sample(weights=topics_df["Weight"])
         topic_id = int(topic_row["Topic"].values[0])
         examples = example_questions.get(topic_id, [])
@@ -93,7 +93,7 @@ def generate_question():
             logger.warning(f"No examples available for topic {topic_id}")
             return {"error": "No examples available for this topic."}
 
-        # Sample up to 3 examples
+        # we sample up to 3 examples for the model
         sample = random.sample(examples, min(3, len(examples)))
 
         prompt = f"""
@@ -109,7 +109,7 @@ The question should be clear, specific, and test similar concepts.
 
         question = call_openai_with_retry([{"role": "user", "content": prompt}])
 
-        # Update state
+    
         state.update({
             "topic_id": topic_id,
             "examples": sample,
@@ -223,14 +223,14 @@ def reset_session():
     logger.info("Session reset")
     return {"message": "Session reset successfully"}
 
-# Example usage functions
+# example usage functions
 def run_example_session():
     """
     Run an example session for testing
     """
     print("=== Example Session ===")
     
-    # Generate a question
+    # generate a question
     result = generate_question()
     if "error" in result:
         print(f"Error: {result['error']}")
@@ -239,7 +239,7 @@ def run_example_session():
     print(f"Question: {result['question']}")
     print(f"Topic ID: {result['topic_id']}")
     
-    # Show answer
+    # show answers
     answer_result = show_answer()
     if "error" in answer_result:
         print(f"Error: {answer_result['error']}")
@@ -247,7 +247,7 @@ def run_example_session():
     
     print(f"Answer: {answer_result['answer']}")
     
-    # Example clarification
+    # clarify the answer
     clarify_result = clarify("Can you explain this in simpler terms?")
     if "error" in clarify_result:
         print(f"Error: {clarify_result['error']}")
@@ -256,5 +256,5 @@ def run_example_session():
     print(f"Clarification: {clarify_result['clarification']}")
 
 if __name__ == "__main__":
-    # Run example session when script is executed directly
+    # run example session when script is executed 
     run_example_session()

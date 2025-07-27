@@ -7,7 +7,7 @@ def test_api():
     print("Testing FastAPI Exam Generator")
     print("=" * 50)
     
-    # Test 1: Health check
+    # Test 1: health check
     print("\n1. Testing health check...")
     try:
         response = requests.get(f"{BASE_URL}/health")
@@ -16,7 +16,7 @@ def test_api():
         print(f"Health check failed: {e}")
         return
     
-    # Test 2: Generate question
+    # Test 2: generate question
     print("\n2. Testing question generation...")
     try:
         response = requests.post(f"{BASE_URL}/predict", 
@@ -32,7 +32,7 @@ def test_api():
         print(f"Question generation failed: {e}")
         return
     
-    # Test 3: Get answer
+    # Test 3: get answer
     print("\n3. Testing answer generation...")
     try:
         response = requests.post(f"{BASE_URL}/answer")
@@ -46,7 +46,7 @@ def test_api():
         print(f"Answer generation failed: {e}")
         return
     
-    # Test 4: Ask clarification
+    # Test 4: ask for clarification
     print("\n4. Testing clarification...")
     try:
         response = requests.post(f"{BASE_URL}/clarify", 
@@ -59,7 +59,7 @@ def test_api():
     except Exception as e:
         print(f"Clarification failed: {e}")
     
-    # Test 5: Get session status
+    # Test 5: get session status
     print("\n5. Testing session status...")
     try:
         response = requests.get(f"{BASE_URL}/status")
@@ -71,14 +71,14 @@ def test_api():
     except Exception as e:
         print(f"Session status failed: {e}")
     
-    # Test 6: Get chat history
+    # Test 6: get chat history
     print("\n6. Testing chat history...")
     try:
         response = requests.get(f"{BASE_URL}/history")
         if response.status_code == 200:
             history_data = response.json()
             print(f"Chat history length: {len(history_data['chat_history'])}")
-            for entry in history_data['chat_history'][-2:]:  # Show last 2 entries
+            for entry in history_data['chat_history'][-2:]:  # show last 2 entries in the chat history
                 print(f"   {entry[0]}: {entry[1][:50]}...")
         else:
             print(f"Chat history failed: {response.text}")
