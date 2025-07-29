@@ -224,7 +224,7 @@ def run_example_session():
     """
     print("=== Example Session ===")
     
-    # generate a question
+    # generate a question from the model
     result = generate_question()
     if "error" in result:
         print(f"Error: {result['error']}")

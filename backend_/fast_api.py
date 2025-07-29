@@ -21,11 +21,10 @@ app = FastAPI(
     description="API for generating exam questions, showing answers, and handling clarifications",
     version="1.0.0"
 )
-
-# CORS middleware for frontend
+#  we implement CORS middleware to allow requests from the frontend only
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["https://askara-ai.vercel.app"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
