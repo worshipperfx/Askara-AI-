@@ -241,7 +241,7 @@ def run_example_session():
     
     print(f"Answer: {answer_result['answer']}")
     
-    # clarify the answer
+    # clarify the answer from the qn
     clarify_result = clarify("Can you explain this in simpler terms?")
     if "error" in clarify_result:
         print(f"Error: {clarify_result['error']}")
