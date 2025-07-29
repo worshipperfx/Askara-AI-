@@ -25,7 +25,7 @@ jobs:
       run: gcloud auth configure-docker
 
     - name: Build Docker image
-      run: docker build -t gcr.io/askara-backend/my-backend .
+      run: docker build -t gcr.io/askara-backend/my-backend ./backend_
 
     - name: Push Docker image to GCR
       run: docker push gcr.io/askara-backend/my-backend
