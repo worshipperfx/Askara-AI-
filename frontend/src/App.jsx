@@ -89,10 +89,12 @@ function App() {
     }
   };
 
+
+  const BASE_URL = import.meta.env.VITE_API_URL;
   const generateQuestion = async () => {
     setIsGeneratingQuestion(true);
     try {
-      const res = await axios.post('http://localhost:8000/predict', {
+      const res = await axios.post(`${BASE_URL}/predict`, {
         paper_code: 'MATH101'
       });
       
@@ -117,7 +119,7 @@ function App() {
   const showAnswer = async () => {
     setIsShowingAnswer(true);
     try {
-      const res = await axios.post('http://localhost:8000/answer');
+      const res = await axios.post(`${BASE_URL}/answer`);
       const newAnswer = res.data.answer;
       setAnswer(newAnswer);
       
@@ -145,7 +147,7 @@ function App() {
         { role: 'user', content: followUp, type: 'clarification-question', id: Date.now() }
       ]);
       
-      const res = await axios.post('http://localhost:8000/clarify', {
+      const res = await axios.post(`${BASE_URL}/clarify`, {
         follow_up: followUp
       });
       

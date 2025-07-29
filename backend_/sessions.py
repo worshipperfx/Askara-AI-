@@ -3,7 +3,6 @@ import random
 import os
 import time
 from openai import OpenAI
-from dotenv import load_dotenv
 import logging
 
 # here setting up logging 
@@ -11,12 +10,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 try:
-    # we load env variables from .env file
-    load_dotenv()
-    
-    #get our key from the loaded env
-    api_key = os.getenv("OPENAI_API_KEY")
-    
+    api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise ValueError("OPENAI_API_KEY is not found in .env file or environment variables.")
     
