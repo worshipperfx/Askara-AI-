@@ -96,7 +96,7 @@ npm install
 npm run dev
 
 
-Make sure your frontend points to the FastAPI backend (e.g., http://localhost:8000).
+frontend points to the FastAPI backend (e.g., http://localhost:8000).
 
 ---
 
