@@ -24,8 +24,8 @@ except Exception as e:
 
 # we load data with error handling
 try:
-    topics_df = pd.read_csv("topic_only.csv")
-    questions_df = pd.read_csv("merged_with_topics.csv")
+    topics_df = pd.read_csv("topic_only2.csv")
+    questions_df = pd.read_csv("merged_with_topics2.csv")
     topics_df['Count'] = pd.to_numeric(topics_df['Count'], errors='coerce')
     topics_df['Weight'] = topics_df['Count'] / topics_df['Count'].sum()
     logger.info("Data loaded successfully")
